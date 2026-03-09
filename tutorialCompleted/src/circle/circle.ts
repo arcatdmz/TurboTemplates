@@ -60,18 +60,13 @@ export class Circle extends TurboElement {
     //Again, this method is automatically called in the initialize() method.
     protected setupUIListeners() {
         super.setupUIListeners();
-        //Adding a click event listener to nameElement
-        turbo(this.nameElement).on(DefaultEventName.click, (e: TurboEvent) => {
-            //Logging that the target was clicked and at which position.
-            //The passed event (if it is a TurboEvent) gives you some useful context for the event.
-            console.log("Clicked", this.nameElement, "at", e.scaledPosition);
-            this.nameElement.focus();
-        })
-            //Chaining functions to add multiple listeners
-            .on(DefaultEventName.clickStart, () =>
-                turbo(this.nameElement).setStyle("color", "green"))
-            .on(DefaultEventName.clickEnd, () =>
-                turbo(this.nameElement).setStyle("color", "black"));
+        //Adding a blur event listener to nameElement (when focus is released from it)
+        turbo(this.nameElement).on(DefaultEventName.blur, () => {
+            //Saving the typed name to the signal
+            this.name = this.nameElement.textContent;
+            //Logging the new saved name.
+            console.log("Name:", this.name);
+        });
     }
 
     //@effect methods are called automatically when the values of the signals they use change.

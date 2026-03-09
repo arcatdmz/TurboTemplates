@@ -1,5 +1,6 @@
-import {modelSignal, signal, TurboModel, TurboYBlock} from "turbodombuilder";
+import {handler, modelSignal, signal, TurboModel, TurboYBlock} from "turbodombuilder";
 import {ComponentData} from "./component.types";
+import {ComponentHandler} from "./component.handler";
 
 //Model class inspired by MVC and PAC
 //The model typically holds the data of the component and simple operations on this data.
@@ -23,6 +24,10 @@ export class ComponentModel extends TurboModel<ComponentData> {
     @modelSignal() a: string;
     @modelSignal() b: string;
     @modelSignal() x: number;
+
+    //Retrieving the handler attached to this model. Check @controller() in component.ts for an
+    //explanation of how this works.
+    @handler() handler: ComponentHandler;
 
     //Setup function called in the model's constructor, if you need to add some behavior at that stage.
     protected setup() {

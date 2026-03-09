@@ -2,7 +2,6 @@ import {define, TurboElement, Point, expose, turbo} from "turbodombuilder";
 import {SquareModel} from "./square.model";
 import {SquareView} from "./square.view";
 import "./square.css";
-import {SquareInteractor} from "./square.interactor";
 
 //Custom square element, defined as a custom element using @define().
 //It extends TurboElement (making it a custom web component), with generic types for its view and model,
@@ -19,8 +18,7 @@ export class Square extends TurboElement<SquareView, any, SquareModel> {
     //You can define any custom fields to assign by default to new squares.
     public static defaultProperties = {
         view: SquareView,
-        model: SquareModel,
-        interactors: SquareInteractor
+        model: SquareModel
     };
 
     //A move function that takes a delta Point and increments accordingly the position stored in the model.

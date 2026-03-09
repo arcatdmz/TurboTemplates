@@ -1,4 +1,4 @@
-import {turbo, effect, TurboView, p} from "turbodombuilder";
+import {turbo, effect, TurboView, p, DefaultEventName} from "turbodombuilder";
 import {SquareModel} from "./square.model";
 import {Square} from "./square";
 
@@ -37,7 +37,13 @@ export class SquareView extends TurboView<Square, SquareModel> {
     //Again, this method is automatically called in the view's initialize() method.
     protected setupUIListeners() {
         super.setupUIListeners();
-        //Attach event listeners here if you need to
+        //Adding a blur event listener to nameElement (when focus is released from it)
+        turbo(this.nameElement).on(DefaultEventName.blur, () => {
+            //Saving the typed name to the signal
+            this.model.name = this.nameElement.textContent;
+            //Logging the new saved name.
+            console.log("Name:", this.model.name);
+        });
     }
 
     //@effect methods are called automatically when the values of the signals they use change

@@ -10,7 +10,8 @@
     "dev:tutorial": "webpack serve --config tutorial/webpack.config.js"
   },
   "dependencies": {
-    "turbodombuilder": "0.9.58"
+    "turbodombuilder": "0.9.58",
+    "yjs": "^13.6.29"
   },
   "devDependencies": {
     "css-loader": "^7.1.4",
