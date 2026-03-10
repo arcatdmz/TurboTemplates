@@ -1,16 +1,16 @@
 .demo-circle {
-    position: absolute;
-    width: 100px;
-    height: 100px;
+  position: absolute;
+  width: 100px;
+  height: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 
-    border-radius: 50%;
+  border-radius: 50%;
 }
 
 .demo-circle > p {
-    text-align: center;
-    max-width: 100%;
+  text-align: center;
+  max-width: 100%;
 }

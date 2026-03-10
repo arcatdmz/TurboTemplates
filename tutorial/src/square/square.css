@@ -1,18 +1,18 @@
 .demo-square {
-    position: absolute;
+  position: absolute;
 
-    top: 0;
-    background-color: red;
+  top: 0;
+  background-color: red;
 
-    width: 100px;
-    height: 100px;
+  width: 100px;
+  height: 100px;
 
-    display: flex;
-    justify-content: center;
-    align-items: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .demo-square > p {
-    text-align: center;
-    max-width: 100%;
+  text-align: center;
+  max-width: 100%;
 }
