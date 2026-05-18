@@ -1,4 +1,4 @@
-import { turbo, TurboButton } from "turbodombuilder";
+import { TurboButton } from "turbodombuilder";
 import { Canvas } from "./canvas/canvas";
 import { Toolbar } from "./toolbar/toolbar";
 import { AddSquareTool } from "./tools/addSquare.tool";

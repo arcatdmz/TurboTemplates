@@ -3,7 +3,7 @@ import "./square.css";
 
 @define("demo-square")
 export class Square extends TurboElement {
-  @signal position: Point;
+  @signal position: Point = new Point();
   @signal color: string = "red";
   @signal name: string = "Square";
   @signal size: number = 100;
